@@ -46,8 +46,8 @@ function Captcha() {
 
   return (
     <>
-      <div className="flex justify-center items-center h-screen">
-        <div className="border-2 rounded border-[#5d5d5dd0] w-[30%] flex flex-col justify-center items-center">
+      <div className="flex justify-center items-center h-screen z-40">
+        <div className="border-2 rounded border-[#5d5d5dd0] bg-slate-600 z-40 w-[30%] flex flex-col justify-center items-center">
           <div className="flex my-3">
             <div className="bgCaptcha w-[220px] rounded mr-2">
               <p className="w-full text-center leading-9 text-[#fff2f29e] text-3xl font-base select-none font-Reenie">

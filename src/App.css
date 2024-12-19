@@ -6,3 +6,54 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.app-container {
+  position: relative;
+  height: 100vh; /* Full screen height */
+  width: 100%; /* Full width */
+  overflow: hidden;
+  background-color: #000; /* Optional: Add a background color or image */
+}
+
+.snowfall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none; /* So clicks pass through */
+  z-index: 1; /* Ensure it's behind Captcha */
+}
+
+.snowfall::before,
+.snowfall::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-image: url("./assets/Snowflake.jpg");
+  background-size: contain;
+  background-repeat: repeat;
+  animation: snowfall 10s linear infinite;
+  opacity: 0.6;
+}
+
+.snowfall::after {
+  animation-delay: 5s; /* Stagger animation for a layered effect */
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.captcha-container {
+  position: relative;
+  z-index: 2; /* Above snowfall */
+}
